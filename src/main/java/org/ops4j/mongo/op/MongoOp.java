@@ -28,7 +28,7 @@ public abstract class MongoOp<T extends MongoOp<?>> extends BaseOp<MongoOp<T>>
   public MongoOp(String name)
   {
     super(name);
-    setDefaultView("/DEFAULT/MONGO");
+    setDefaultView("DEFAULT.MONGO");
   }
 
   public MongoOp<T> initialize() throws OpsException

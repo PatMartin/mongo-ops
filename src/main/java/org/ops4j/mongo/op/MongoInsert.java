@@ -29,7 +29,7 @@ public class MongoInsert extends MongoOp<MongoInsert>
   {
     super("mongo:insert");
   }
-
+  
   public MongoInsert open() throws OpsException
   {
     super.open();
