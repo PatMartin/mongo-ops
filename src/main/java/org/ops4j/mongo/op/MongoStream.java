@@ -64,9 +64,13 @@ public class MongoStream extends MongoOp<MongoStream> implements JsonSource
     return this;
   }
 
-  public List<OpData> execute(OpData input)
+  public List<OpData> execute(OpData input) throws OpsException
   {
-    return input.asList();
+    if (it.hasNext())
+    {
+      return new OpData(it.next()).asList();
+    }
+    return new ArrayList<OpData>();
   }
 
   public MongoStream close() throws OpsException
