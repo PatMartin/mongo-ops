@@ -73,10 +73,10 @@ public class MongoStream extends MongoOp<MongoStream> implements JsonSource
     return new ArrayList<OpData>();
   }
 
-  public MongoStream close() throws OpsException
+  public List<OpData> close() throws OpsException
   {
     super.close();
-    return this;
+    return OpData.emptyList();
   }
 
   public static void main(String args[]) throws OpsException

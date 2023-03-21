@@ -1,5 +1,8 @@
 package org.ops4j.mongo.op;
 
+import java.util.List;
+
+import org.ops4j.OpData;
 import org.ops4j.base.BaseOp;
 import org.ops4j.exception.OpsException;
 
@@ -47,9 +50,9 @@ public abstract class MongoOp<T extends MongoOp<?>> extends BaseOp<MongoOp<T>>
     return this;
   }
 
-  public MongoOp<T> close() throws OpsException
+  public List<OpData> close() throws OpsException
   {
     client.close();
-    return this;
+    return OpData.emptyList();
   }
 }

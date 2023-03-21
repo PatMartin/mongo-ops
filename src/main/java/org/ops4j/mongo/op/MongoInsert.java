@@ -44,10 +44,10 @@ public class MongoInsert extends MongoOp<MongoInsert>
     return input.asList();
   }
 
-  public MongoInsert close() throws OpsException
+  public List<OpData> close() throws OpsException
   {
     super.close();
-    return this;
+    return OpData.emptyList();
   }
 
   public static void main(String args[]) throws OpsException
