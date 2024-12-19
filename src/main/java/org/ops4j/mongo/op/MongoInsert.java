@@ -16,7 +16,7 @@ import lombok.Setter;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@AutoService(Op.class) @Command(name = "mongo:insert",
+@AutoService(Op.class) @Command(name = "mongo-insert",
     description = "Insert documents into a mongo collection.")
 public class MongoInsert extends MongoOp<MongoInsert>
 {
@@ -27,7 +27,7 @@ public class MongoInsert extends MongoOp<MongoInsert>
 
   public MongoInsert()
   {
-    super("mongo:insert");
+    super("mongo-insert");
   }
   
   public MongoInsert open() throws OpsException

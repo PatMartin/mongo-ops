@@ -23,7 +23,7 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 
 @AutoService(Op.class)
-@Command(name = "mongo:stream", description = "Stream documents from mongo.")
+@Command(name = "mongo-stream", description = "Stream documents from mongo.")
 public class MongoStream extends MongoOp<MongoStream> implements JsonSource
 {
   @Option(names = { "-c", "-collection" }, required = true,
@@ -41,7 +41,7 @@ public class MongoStream extends MongoOp<MongoStream> implements JsonSource
 
   public MongoStream()
   {
-    super("mongo:stream");
+    super("mongo-stream");
   }
 
   public MongoStream open() throws OpsException

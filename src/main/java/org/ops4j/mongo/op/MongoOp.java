@@ -14,7 +14,7 @@ import lombok.Setter;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@Command(name = "mongo:op",
+@Command(name = "mongo-op",
     description = "Insert documents into a mongo collection.")
 public abstract class MongoOp<T extends MongoOp<?>> extends BaseOp<MongoOp<T>>
 {
@@ -22,7 +22,8 @@ public abstract class MongoOp<T extends MongoOp<?>> extends BaseOp<MongoOp<T>>
       description = "The connection string.")
   private @Getter @Setter String           url     = null;
 
-  @Option(names = { "-d", "-db" }, description = "The database name.")
+  @Option(names = { "-d", "-db" }, description = "The database name."
+      + "  DEFAULT='${DEFAULT-VALUE}'")
   private @Getter @Setter String           db      = "test";
 
   protected com.mongodb.client.MongoClient client  = null;
